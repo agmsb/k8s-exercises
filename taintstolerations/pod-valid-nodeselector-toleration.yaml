@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-valid-nodeselector-toleration
+  labels:
+    role: foo
+spec:
+  containers:
+    - name: web
+      image: nginx
+      ports:
+        - name: web
+          containerPort: 80
+          protocol: TCP
+  tolerations:
+    - key: team
+      operator: Equal
+      value: ml
+      effect: "NoSchedule"
+  nodeSelector:
+    kubernetes.io/hostname: gke-ckad-pool-3-0a947527-tgk7
