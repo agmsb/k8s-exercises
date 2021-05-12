@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: pod-required-nodeaffinity
+  name: preferred-nodeaffinity
   labels:
     role: foo
 spec:
@@ -20,5 +20,13 @@ spec:
             - key: cloud.google.com/gke-nodepool
               operator: In
               values:
-                - pool-1
-                - pool-4
+                - default-pool
+                - non-existent-pool
+      preferredDuringSchedulingIgnoredDuringExecution:
+        - preference:
+            matchExpressions:
+              - key: node-preference
+                operator: In
+                values:
+                  - preferred
+          weight: 1

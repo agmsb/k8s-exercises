@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: pod-toleration
+  name: pod-valid-nodeselector-toleration
   labels:
     role: foo
 spec:
@@ -15,4 +15,7 @@ spec:
   tolerations:
     - key: team
       operator: Equal
-      value: ml
+      value: seven
+      effect: "NoSchedule"
+  nodeSelector:
+    cloud.google.com/gke-nodepool: pool-3
