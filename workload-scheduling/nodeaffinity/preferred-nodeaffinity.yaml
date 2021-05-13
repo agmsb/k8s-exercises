@@ -21,7 +21,7 @@ spec:
               operator: In
               values:
                 - default-pool
-                - non-existent-pool
+                - pool-2
       preferredDuringSchedulingIgnoredDuringExecution:
         - preference:
             matchExpressions:
