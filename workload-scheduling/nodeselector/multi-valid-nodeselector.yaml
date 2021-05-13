@@ -14,4 +14,4 @@ spec:
           protocol: TCP
   nodeSelector:
     cloud.google.com/gke-nodepool: default-pool
-    topology.gke.io/zone: us-central1-b
+    topology.gke.io/zone: us-central1-a
