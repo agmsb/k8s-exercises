@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: pod-valid-nodeselector-toleration
+  name: valid-nodeselector-valid-toleration
   labels:
     role: foo
 spec:

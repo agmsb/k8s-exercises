@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: pod-no-valid-nodeselector-taint
+  name: valid-nodeselector-no-toleration
   labels:
     role: foo
 spec:
